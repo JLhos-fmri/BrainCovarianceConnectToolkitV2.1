@@ -1,0 +1,12 @@
+HC_p_sort(1,:)=HC_p(1,:);
+HC_pi_sort(2,:)=HC_p(2,:);
+HC_p_sort(3,:)=HC_p(8,:);
+HC_p_sort(4,:)=HC_p(9,:);
+
+HC_p_sort(5,:)=HC_p(3,:);
+HC_p_sort(6,:)=HC_p(5,:);
+HC_p_sort(7,:)=HC_p(6,:);
+
+HC_p_sort(8,:)=HC_p(4,:);
+HC_p_sort(9,:)=HC_p(7,:);
+HC_p_sort(10,:)=HC_p(10,:);
