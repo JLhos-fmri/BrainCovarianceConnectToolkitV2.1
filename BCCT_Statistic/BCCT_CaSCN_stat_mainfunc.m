@@ -60,8 +60,8 @@ if strcmp(RealComp1.RealCompPara.mod,'volmap')
                 RealCompPara1temp.PermMark=0;
                 RealCompPara2temp.PermMark=0;
                 
-                Res1(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara1temp,maskedsignal1perm,corrsig1perm(:,i));
-                Res2(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara2temp,maskedsignal2perm,corrsig2perm(:,i));
+                Res1(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara1temp,maskedsignal1perm,corrsig1perm);
+                Res2(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara2temp,maskedsignal2perm,corrsig2perm);
 
             end
             if RealComp1.RealCompPara.Calmethod1 % res
