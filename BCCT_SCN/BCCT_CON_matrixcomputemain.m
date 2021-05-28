@@ -20,7 +20,7 @@ if SeedROItype<3
     Ttrans = vinput.mat;
     VOXELSIZE = abs([vinput.mat(1,1),vinput.mat(2,2),vinput.mat(3,3)]);
     if strcmp(Parameter.masks,'Defaults')
-        maskfiles = fullfile(path,'template','grey.nii');
+        maskfiles = fullfile(path,'templates','grey.nii');
         [vmask,datamask] = Dynamic_read_dir_NIFTI(maskfiles);
         datamask = datamask>0.2;
     else
