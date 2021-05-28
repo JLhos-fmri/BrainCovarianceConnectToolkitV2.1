@@ -249,7 +249,7 @@ function perm_psel(varargin)
 D = varargin{3};
 [FileName,PathName,FilterIndex] = uigetfile({'*.nii';'*.img'},'Permutation Pmap(mainly for group)');
 PGseed = fullfile(PathName,FileName);
-set(D.coefmap_edit,'string',PGseed);
+set(D.perm_p_edit,'string',PGseed);
 end
 function perm_pthr(varargin)
 D = varargin{3};

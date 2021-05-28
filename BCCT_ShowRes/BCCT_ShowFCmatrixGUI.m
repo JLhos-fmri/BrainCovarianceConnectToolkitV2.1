@@ -176,11 +176,11 @@ if isfield(tempinfo,'DF_E')
     ShowMatinfo.P = P;
     ShowMatinfo.DF_E = DF_E;
     ShowMatinfo.Type = 1;
-elseif isfield(tempinfo,'ZPval')
+elseif isfield(tempinfo,'P_mat')
     DF_E = 100000;
     set(Hshow.DOFE,'string',num2str(DF_E));
-    Pval = tempinfo.Pval;
-    ZPval = tempinfo.ZPval;
+    Pval = tempinfo.P_mat;
+    ZPval = tempinfo.P_mat;
     set(Hshow.PvalE,'string','0.05');
     set(Hshow.Colmap1,'val',1);
     set(Hshow.Colmap2,'val',0);
@@ -195,7 +195,7 @@ elseif isfield(tempinfo,'ZPval')
     set(Hshow.underlineE,'string',num2str([0,size(Pval,1)]));
 
     ShowMatinfo.Pval = Pval;
-    ShowMatinfo.Pval = ZPval;
+    ShowMatinfo.ZPval = ZPval;
     ShowMatinfo.DF_E = DF_E;
     ShowMatinfo.Type = 2;
 else    
@@ -234,6 +234,9 @@ else
     ShowMatinfo.DF_E = str2num(DOEF);
 end
 [pat,nam0,ext0] = fileparts(which('BCCT_ShowFCmatrixGUI.m'));
+if isempty(dir([pat,filesep,'MatrixOutshow',filesep]))
+    mkdir([pat,filesep,'MatrixOutshow',filesep])
+end
 if isempty(dir([pat,filesep,'MatrixOutshow',filesep,'SetUpinfo.mat']))
     save([pat,filesep,'MatrixOutshow',filesep,'SetUpinfo.mat'],'ShowMatinfo');
 else
@@ -366,5 +369,5 @@ end
 function HSMATRIXEXIT(varargin)
 Hshow = varargin{3};
 close(Hshow.fig);
-ASBC_VIEW;
+BCCT_VIEWmain;
 end

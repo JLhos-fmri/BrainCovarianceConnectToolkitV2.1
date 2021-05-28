@@ -532,7 +532,7 @@ for i = 1:size(Dall,2)
     A = rot90(squeeze(Dall(:,i,:)),1);
     h = figure('pos',[10,10,size(A,1),size(A,2)]);
     hax = axes('parent',h,'pos',[0,0,1,1]);axis(hax,'off');
-    imshow(A,[0,2],hax);colormap(con.COLORS);axis off;
+    imshow(A,[0,2],'parent',hax);colormap(con.COLORS);axis off;
     print(h,'-dtiff','-r300',outnametemp);
     close(h)
 end
@@ -541,7 +541,7 @@ for i = 1:size(Dall,3)
     A = rot90(squeeze(Dall(:,:,i)),1);
     h = figure('pos',[10,10,size(A,1),size(A,2)]);
     hax = axes('parent',h,'pos',[0,0,1,1]);axis(hax,'off');
-    imshow(A,[0,2],hax);colormap(con.COLORS);axis off;
+    imshow(A,[0,2],'parent',hax);colormap(con.COLORS);axis off;
     print(h,'-dtiff','-r300',outnametemp);
     close(h)    
 end

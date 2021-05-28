@@ -164,7 +164,7 @@ end
 set(Hshow.orderE,'string',num2str(1:nrois));
 set(Hshow.underlineE,'string',num2str([1,nrois]));
 
-[pat,nam0,ext0] = fileparts(which('BCCT_ShowGCmatrixGUI.m'));
+[pat,nam0,ext0] = fileparts(which('BCCT_ShowGCmatrix_GUI.m'));
 
 if ~isdir([pat,filesep,'MatrixOutshowGC',filesep])
     mkdir([pat,filesep,'MatrixOutshowGC',filesep]);
@@ -188,7 +188,7 @@ Hshow = varargin{3};
 Outputdir = get(Hshow.IO_Outputed,'string');
 Inputdir = get(Hshow.IO_inputed,'string');
 
-[pat,nam0,ext0] = fileparts(which('BCCT_ShowGCmatrixGUI.m'));
+[pat,nam0,ext0] = fileparts(which('BCCT_ShowGCmatrix_GUI.m'));
 load([pat,filesep,'MatrixOutshowGC',filesep,'SetUpinfo.mat']);
 Types = ShowMatinfo.Type;
 % save temps

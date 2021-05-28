@@ -469,7 +469,7 @@ elseif TRFZ_Val{3}
 elseif TRFZ_Val{4}
     [FileName,PathName,FilterIndex] = uigetfile({'*.nii';'*.img'},'Z map selection');
     PGseed = fullfile(PathName,FileName);
-    Zval = PtoZ(0.05);
+    Zval = AS_PtoZ(0.05);
     set(D.IntE,'string',num2str(Zval));
     set(D.TFRZmapedit,'string',PGseed);
 elseif TRFZ_Val{5}

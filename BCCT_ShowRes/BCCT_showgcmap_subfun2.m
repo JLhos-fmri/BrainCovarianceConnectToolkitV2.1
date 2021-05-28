@@ -86,7 +86,7 @@ else % Perm p
 %     Intv = Parameter.Mod1.Int;
     Pval = Parameter.permpthr;
     
-    DatShow_orig = dynamicBC_Reslice_forshow(Parameter.Mod2.Pmap,1,Parameter.BG);
+    DatShow_orig = dynamicBC_Reslice_forshow(Parameter.permpmap,1,Parameter.bgmap);
     DatShow_orig(isnan(DatShow_orig)) = 0.5;
     DatShow_orig = reshape(DatShow_orig,Vbg.dim);   
     indpos1 = find(DatShow_orig>1-Pval);
@@ -107,12 +107,13 @@ else % Perm p
     indneg = find(DatShow_F2<0);
     Dall = D_BG;
     %
-    if Parameter.show==0 %% both
+    
+    if Parameter.PNlab(1)==1 %% both
         Dall(indpos) = 1.5+(DatShow_F2(indpos)-minv)/(maxv-minv)*0.49+0.01;
         Dall(indneg) = 1.0+(DatShow_F2(indneg)+minv)*-1/(maxv-minv)*0.49+0.01;
-    elseif Parameter.show==1 %% pos only
+    elseif Parameter.PNlab(2)==1 %% pos only
         Dall(indpos) = 1.5+(DatShow_F2(indpos)-minv)/(maxv-minv)*0.49+0.01;
-    elseif Parameter.show==2
+    elseif Parameter.PNlab(3)==1
         Dall(indneg) = 1.0+(DatShow_F2(indneg)+minv)*-1/(maxv-minv)*0.49+0.01;
     end
     A = rot90(squeeze(Dall(:,:,round(Vbg.dim(3)/2))),1);
