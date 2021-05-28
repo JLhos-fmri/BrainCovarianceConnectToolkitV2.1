@@ -280,7 +280,7 @@ elseif strcmp(RealComp1.RealCompPara.mod,'surfmap')
     Mr = RealComp1.RealCompPara.Mr;
     N1size = RealComp1.RealCompPara.N1size;
     N2size = RealComp1.RealCompPara.N2size;
-    
+%     save test
     if Parameter.Permlab==1
         Permnum = Parameter.PermNum;
         for i = 1:size(ROIsig_g1,2)    
@@ -317,8 +317,8 @@ elseif strcmp(RealComp1.RealCompPara.mod,'surfmap')
                 RealCompPara1temp.PermMark=0;
                 RealCompPara2temp.PermMark=0;
                 
-                Res1(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara1temp,maskedsignal1perm,corrsig1perm(:,i));
-                Res2(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara2temp,maskedsignal2perm,corrsig2perm(:,i));
+                Res1(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara1temp,maskedsignal1perm,corrsig1perm);
+                Res2(iperm) = BCCT_Perm_CaSCNMap_Cal(RealCompPara2temp,maskedsignal2perm,corrsig2perm);
 
             end
             if RealComp1.RealCompPara.Calmethod1 % res

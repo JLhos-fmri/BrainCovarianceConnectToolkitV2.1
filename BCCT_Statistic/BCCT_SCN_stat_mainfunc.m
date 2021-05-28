@@ -76,6 +76,7 @@ if strcmp(RealComp1.RealCompPara.mod,'volmap')
                     T(j) = 0;
                     Z(j) = 0;
                     P(j) = 0.5;
+                    slmt.df = 0;
                 end
             end
             Rmaps = zeros(dims);
